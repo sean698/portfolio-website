@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist/node",
+    "lib": ["es2018"],
+    "module": "es6",
+    "target": "es2018"
+  },
+  "include": ["server/**/*"]
+}

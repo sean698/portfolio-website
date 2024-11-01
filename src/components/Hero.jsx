@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { ROLES } from "../constants";
-import profilePic from "../assets/kevinRushProfile.png";
+import profilePic from "../assets/profilePic.png";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import { CheckIcon, ChevronRightIcon } from "lucide-react";
@@ -26,10 +26,10 @@ const Hero = () => {
     return () => clearTimeout(timer);
   }, []);
   return (
-    <div className="border-b border-neutral-900 pb-4 lg:mb-35">
-      <div className="flex flex-wrap">
-        <div className="w-full lg:w-1/2">
-          <div className="flex flex-col items-center lg:items-start">
+    <div className="border-b border-neutral-900 pb-20">
+      <div className="flex flex-wrap items-center justify-center">
+        <div className="w-full lg:w-5/12">
+          <div className="flex flex-col w-full">
             {/* <motion.h1
               variants={xTransitionContainer({ delay: 0 })}
               initial="hidden"
@@ -42,10 +42,10 @@ const Hero = () => {
               variants={xTransitionContainer({ delay: 0 })}
               initial="hidden"
               animate="visible"
-              className="text-4xl mt-16 mb-8"
+              className="text-4xl mt-16 mb-6"
             >
               Hi, I am
-              <h1 className="pb-12 text-6xl font-bold tracking-tight lg:mt-4 lg:text-6xl">
+              <h1 className="text-6xl font-bold tracking-tight lg:mt-4 lg:text-6xl">
                 Shiyuan Miao
               </h1>
             </motion.div>
@@ -72,43 +72,40 @@ const Hero = () => {
                 </p>
               </div>
             </motion.div>
-            {/* <motion.p
-              variants={xTransitionContainer({ delay: 1 })}
-              initial="hidden"
-              animate="visible"
-              className="my-2 max-w-xl py-6 font-light tracking-tighter"
-            >
-              {HERO_CONTENT}
-            </motion.p> */}
 
             <motion.div
-              className="mt-11"
+              className="mt-16"
               variants={xTransitionContainer({ delay: 1 })}
               initial="hidden"
               animate="visible"
             >
-              <AnimatedSubscribeButton
-                buttonColor="#000000"
-                buttonTextColor="#ffffff"
-                subscribeStatus={false}
-                initialText={
-                  <span className="group inline-flex items-center">
-                    Get My Resume{" "}
-                    <ChevronRightIcon className="ml-1 size-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </span>
-                }
-                changeText={
-                  <span className="group inline-flex items-center">
-                    <CheckIcon className="mr-2 size-4" />
-                    Thank you!{" "}
-                  </span>
-                }
-              />
+              <a
+                href="/src/assets/Resume_Shiyuan_Miao.pdf"
+                download="Resume_Shiyuan_Miao.pdf"
+              >
+                <AnimatedSubscribeButton
+                  buttonColor="#301E67"
+                  buttonTextColor="#ffffff"
+                  subscribeStatus={false}
+                  initialText={
+                    <span className="group inline-flex items-center">
+                      Get My Resume{" "}
+                      <ChevronRightIcon className="ml-1 size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </span>
+                  }
+                  changeText={
+                    <span className="group inline-flex items-center">
+                      <CheckIcon className="mr-2 size-4" />
+                      Thank you!{" "}
+                    </span>
+                  }
+                />
+              </a>
             </motion.div>
           </div>
         </div>
 
-        <div className="w-full lg:w-1/2 lg:p-8">
+        <div className="w-full lg:w-1/3 lg:p-8 mt-20">
           <div className="flex justify-center">
             <motion.img
               variants={xTransitionContainer({

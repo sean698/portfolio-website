@@ -7,7 +7,7 @@ const Experience = () => {
       <motion.h1
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 1 }}
         className="my-20 text-center text-4xl"
       >
         Experience
@@ -37,7 +37,7 @@ const Experience = () => {
               {exp.technologies.map((tech, index) => (
                 <span
                   key={index}
-                  className="mr-2 mt-4 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-900"
+                  className="mr-2 mt-4 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-400"
                 >
                   {tech}
                 </span>

@@ -1,5 +1,4 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
 import { Dock, DockIcon } from "@/components/ui/dock";
 import { MailIcon } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -7,10 +6,40 @@ import { Link } from "react-router-dom";
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
 export default function Navbar() {
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollTop, setLastScrollTop] = useState(0);
+  const [atTop, setAtTop] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop) {
+        setIsVisible(false); // 向下滚动
+      } else {
+        setIsVisible(true); // 向上滚动
+      }
+      if (scrollTop === 0) {
+        setAtTop(true); // 滚动到顶部
+      } else {
+        setAtTop(false); // 不在顶部
+      }
+      setLastScrollTop(scrollTop <= 0 ? 0 : scrollTop); // 更新滚动位置
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollTop]);
+
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-opacity-50 backdrop-blur-lg pt-3 px-3 mr-16 shadow-md">
-      <p>Shiyuan Miao</p>
-      <div className="relative">
+    // <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-opacity-50 backdrop-blur-lg pt-3 px-3 mr-16 shadow-md">
+    <div
+      className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between pb-1 bg-opacity-20 backdrop-blur-lg pt-3 px-3 shadow-md transition-opacity duration-300 ${
+        isVisible ? "opacity-100 bg-gray-800" : "opacity-0"
+      }`}
+    >
+      {" "}
+      <p className="ml-16">Shiyuan Miao</p>
+      <div className="relative mr-16">
         <Dock magnification={60} distance={100}>
           <DockIcon className=" dark:bg-white/10 p-3">
             <a

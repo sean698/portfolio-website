@@ -6,14 +6,14 @@ import Typewriter from "typewriter-effect";
 import { CheckIcon, ChevronRightIcon } from "lucide-react";
 import { AnimatedSubscribeButton } from "@/components/ui/animated-subscribe-button";
 
-const xTransitionContainer = ({ hiddenX = -100, duration = 0.5, delay }) => ({
-  hidden: { x: hiddenX, opacity: 0 },
-  visible: {
-    x: 0,
-    opacity: 1,
-    transition: { duration, delay },
-  },
-});
+// const xTransitionContainer = ({ hiddenX = -100, duration = 0.5, delay }) => ({
+//   hidden: { x: hiddenX, opacity: 0 },
+//   visible: {
+//     x: 0,
+//     opacity: 1,
+//     transition: { duration, delay },
+//   },
+// });
 
 const Hero = () => {
   const [startTyping, setStartTyping] = useState(false);
@@ -30,18 +30,14 @@ const Hero = () => {
       <div className="flex flex-wrap items-center justify-center">
         <div className="w-full lg:w-5/12">
           <div className="flex flex-col w-full">
-            {/* <motion.h1
-              variants={xTransitionContainer({ delay: 0 })}
-              initial="hidden"
-              animate="visible"
-              className="pb-12 text-6xl font-bold tracking-tight lg:mt-16 lg:text-6xl"
-            >
-              Hi, I am Shiyuan Miao
-            </motion.h1> */}
             <motion.div
-              variants={xTransitionContainer({ delay: 0 })}
-              initial="hidden"
-              animate="visible"
+              whileInView={{
+                x: 0,
+                opacity: 1,
+                transition: { duration: 0.5, delay: 0 },
+              }}
+              initial={{ x: -100, opacity: 0 }}
+              viewport={{ once: true, amount: 1 }}
               className="text-4xl mt-16 mb-6"
             >
               Hi, I am
@@ -50,10 +46,13 @@ const Hero = () => {
               </h1>
             </motion.div>
             <motion.div
-              variants={xTransitionContainer({ delay: 0.5 })}
-              initial="hidden"
-              animate="visible"
-              className=""
+              whileInView={{
+                x: 0,
+                opacity: 1,
+                transition: { duration: 0.5, delay: 0.5 },
+              }}
+              initial={{ x: -100, opacity: 0 }}
+              viewport={{ once: true, amount: 1 }}
             >
               <div className="flex text-4xl tracking-tight">
                 I am a
@@ -75,9 +74,13 @@ const Hero = () => {
 
             <motion.div
               className="mt-16"
-              variants={xTransitionContainer({ delay: 1 })}
-              initial="hidden"
-              animate="visible"
+              whileInView={{
+                x: 0,
+                opacity: 1,
+                transition: { duration: 0.5, delay: 1 },
+              }}
+              initial={{ x: -100, opacity: 0 }}
+              viewport={{ once: true, amount: 1 }}
             >
               <a
                 href="/src/assets/Resume_Shiyuan_Miao.pdf"
@@ -108,16 +111,13 @@ const Hero = () => {
         <div className="w-full lg:w-1/3 lg:p-8 mt-20">
           <div className="flex justify-center">
             <motion.img
-              variants={xTransitionContainer({
-                hiddenX: 100,
-                duration: 1,
-                delay: 1.3,
-              })}
-              initial="hidden"
-              animate="visible"
-              // initial={{ x: 100, opacity: 0 }}
-              // animate={{ x: 0, opacity: 1 }}
-              // transition={{ duration: 1, delay: 1.3 }}
+              whileInView={{
+                x: 0,
+                opacity: 1,
+                transition: { duration: 1, delay: 1.3 },
+              }}
+              initial={{ x: 100, opacity: 0 }}
+              viewport={{ once: true, amount: 1 }}
               src={profilePic}
             />
           </div>

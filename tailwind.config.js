@@ -1,5 +1,7 @@
 import { fontFamily } from "tailwindcss/defaultTheme";
 import tailwindcssAnimate from "tailwindcss-animate";
+import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
+import colors from "tailwindcss/colors";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -13,6 +15,10 @@ export default {
         "2xl": "1400px",
       },
     },
+    plugins: [
+      // rest of the code
+      addVariablesForColors,
+    ],
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -90,3 +96,14 @@ export default {
   },
   plugins: [tailwindcssAnimate],
 };
+
+function addVariablesForColors({ addBase, theme }) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+
+  addBase({
+    ":root": newVars,
+  });
+}

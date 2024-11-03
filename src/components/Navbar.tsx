@@ -14,16 +14,16 @@ export default function Navbar() {
     const handleScroll = () => {
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       if (scrollTop > lastScrollTop) {
-        setIsVisible(false); // 向下滚动
+        setIsVisible(false);
       } else {
-        setIsVisible(true); // 向上滚动
+        setIsVisible(true);
       }
       if (scrollTop === 0) {
-        setAtTop(true); // 滚动到顶部
+        setAtTop(true);
       } else {
-        setAtTop(false); // 不在顶部
+        setAtTop(false);
       }
-      setLastScrollTop(scrollTop <= 0 ? 0 : scrollTop); // 更新滚动位置
+      setLastScrollTop(scrollTop <= 0 ? 0 : scrollTop);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -31,11 +31,11 @@ export default function Navbar() {
   }, [lastScrollTop]);
 
   return (
-    // <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-opacity-50 backdrop-blur-lg pt-3 px-3 mr-16 shadow-md">
     <div
-      className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between pb-1 bg-opacity-20 backdrop-blur-lg pt-3 px-3 shadow-md transition-opacity duration-300 ${
-        isVisible ? "opacity-100 bg-gray-800" : "opacity-0"
-      }`}
+      // className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between pb-1 bg-opacity-20 backdrop-blur-lg pt-3 px-3 shadow-md transition-opacity duration-300 ${
+      //   isVisible ? "opacity-100 bg-gray-800" : "opacity-0"
+      // }`}
+      className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between pb-1 bg-opacity-20 backdrop-blur-lg pt-3 px-3 shadow-md transition-opacity duration-300 bg-gray-800`}
     >
       {" "}
       <p className="ml-16">Shiyuan Miao</p>

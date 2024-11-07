@@ -8,6 +8,7 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Education from "./components/Education";
 import MacbookScrollDemo from "./components/Macbook";
+import Sidebar from "./components/Sidebar";
 
 const App = () => {
   // bg light opacity
@@ -42,16 +43,22 @@ const App = () => {
           }}
         ></div>
       </div>
-      <Navbar />
-      <div className="container mx-auto px-8 mt-20">
-        <MacbookScrollDemo />
-        <Hero />
-        <About />
-        <Skills />
-        {/* <Education /> */}
-        <Experience />
-        <Projects />
-        <Contact />
+      {/* <Navbar /> */}
+      <div className="container mx-auto px-8 mt-20 flex">
+        <div className="fixed top-0 left-0">
+          <Sidebar />
+        </div>
+
+        <div>
+          <MacbookScrollDemo />
+          <Hero />
+          <About />
+          <Skills />
+          {/* <Education /> */}
+          <Experience />
+          <Projects />
+          <Contact />
+        </div>
       </div>
     </div>
   );

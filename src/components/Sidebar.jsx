@@ -5,12 +5,13 @@ import profilePic from "../assets/profilePic.png";
 import {
   IconTool,
   IconSchool,
-  IconUserBolt,
+  IconUser,
   IconBrandGithub,
   IconBrandLinkedin,
   IconBriefcase,
   IconMail,
   IconFolders,
+  IconClipboardText,
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -21,7 +22,7 @@ export default function SidebarDemo() {
       label: "About",
       href: "#about",
       icon: (
-        <IconUserBolt className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+        <IconUser className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
     {
@@ -55,6 +56,15 @@ export default function SidebarDemo() {
   ];
 
   const links2 = [
+    {
+      label: "Resume",
+      href: "/src/assets/Resume_Shiyuan_Miao.pdf",
+      target: "_blank",
+      rel: "noopener noreferrer",
+      icon: (
+        <IconClipboardText className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+      ),
+    },
     {
       label: "Email",
       href: "mailto:shiyuanm000@gmail.com",
@@ -91,7 +101,7 @@ export default function SidebarDemo() {
       )}
     >
       <Sidebar open={open} setOpen={setOpen}>
-        <SidebarBody className="bg-gradient-to-b from-fuchsia-50 via-violet-50 to-indigo-50 justify-between gap-10">
+        <SidebarBody className="bg-gradient-to-b from-fuchsia-100 via-violet-100 to-indigo-100 justify-between gap-10">
           <div className="flex flex-col flex-1 overflow-x-hidden justify-between">
             <div className="flex flex-col gap-2">
               {links.map((link, idx) => (

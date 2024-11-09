@@ -84,7 +84,8 @@ const Hero = () => {
             >
               <a
                 href="/src/assets/Resume_Shiyuan_Miao.pdf"
-                download="Resume_Shiyuan_Miao.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <AnimatedSubscribeButton
                   buttonColor="#301E67"

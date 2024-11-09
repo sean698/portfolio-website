@@ -1,11 +1,18 @@
 "use client";
 import { useState } from "react";
 import { Sidebar, SidebarBody, SidebarLink } from "./ui/sidebar";
+import profilePic from "../assets/profilePic.png";
 import {
   IconArrowLeft,
-  IconBrandTabler,
+  IconTool,
   IconSettings,
+  IconSchool,
   IconUserBolt,
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconBriefcase,
+  IconMail,
+  IconFolders,
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -16,28 +23,63 @@ export default function SidebarDemo() {
       label: "About",
       href: "#about",
       icon: (
-        <IconBrandTabler className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+        <IconUserBolt className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
     {
       label: "Skills",
       href: "#skills",
       icon: (
-        <IconUserBolt className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+        <IconTool className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+      ),
+    },
+    {
+      label: "Education",
+      href: "#education",
+      icon: (
+        <IconSchool className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
     {
       label: "Experience",
       href: "#experience",
       icon: (
-        <IconSettings className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+        <IconBriefcase className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
     {
       label: "Projects",
       href: "#projects",
       icon: (
-        <IconArrowLeft className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+        <IconFolders className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+      ),
+    },
+  ];
+
+  const links2 = [
+    {
+      label: "Email",
+      href: "mailto:shiyuanm000@gmail.com",
+      icon: (
+        <IconMail className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+      ),
+    },
+    {
+      label: "Github",
+      href: "https://github.com/sean698",
+      target: "_blank",
+      rel: "noopener noreferrer",
+      icon: (
+        <IconBrandGithub className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+      ),
+    },
+    {
+      label: "Linkedin",
+      href: "https://www.linkedin.com/in/shiyuan-miao-5b870a193/",
+      target: "_blank",
+      rel: "noopener noreferrer",
+      icon: (
+        <IconBrandLinkedin className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
   ];
@@ -52,10 +94,16 @@ export default function SidebarDemo() {
     >
       <Sidebar open={open} setOpen={setOpen}>
         <SidebarBody className="justify-between gap-10">
-          <div className="flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
-            {open ? <Logo /> : <LogoIcon />}
-            <div className="mt-8 flex flex-col gap-2">
+          <div className="flex flex-col flex-1 overflow-x-hidden justify-between">
+            {/* {open ? <Logo /> : <LogoIcon />} */}
+            <div className="flex flex-col gap-2">
               {links.map((link, idx) => (
+                <SidebarLink key={idx} link={link} />
+              ))}
+            </div>
+
+            <div className="flex flex-col gap-2">
+              {links2.map((link, idx) => (
                 <SidebarLink key={idx} link={link} />
               ))}
             </div>
@@ -63,11 +111,11 @@ export default function SidebarDemo() {
           <div>
             <SidebarLink
               link={{
-                label: "Manu Arora",
+                label: "Shiyuan Miao",
                 href: "#",
                 icon: (
                   <img
-                    src="https://assets.aceternity.com/manu.png"
+                    src={profilePic}
                     className="h-7 w-7 flex-shrink-0 rounded-full"
                     width={50}
                     height={50}
@@ -79,7 +127,6 @@ export default function SidebarDemo() {
           </div>
         </SidebarBody>
       </Sidebar>
-      {/* <Dashboard /> */}
     </div>
   );
 }

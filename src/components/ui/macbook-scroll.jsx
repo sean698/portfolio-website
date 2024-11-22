@@ -121,7 +121,7 @@ export const Lid = ({ scaleX, scaleY, rotate, translate, src }) => {
     const unsubscribe = scrollYProgress.onChange((value) => {
       const threshold = 0.2;
       if (value > threshold) {
-        const fastOpacityChange = 1 - (value - threshold) * 3;
+        const fastOpacityChange = 1 - (value - threshold) * 6;
         setOpacity(Math.max(0, fastOpacityChange));
       } else {
         setOpacity(1);

@@ -16,7 +16,7 @@ const App = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollThreshold = window.innerHeight * 1.6;
+      const scrollThreshold = window.innerHeight * 1.9;
       const totalScroll = document.documentElement.scrollTop - scrollThreshold;
       if (totalScroll > 0) {
         const windowHeight = window.innerHeight;

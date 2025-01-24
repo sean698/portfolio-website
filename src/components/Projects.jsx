@@ -57,7 +57,7 @@ const Projects = () => {
                 project.image ? "lg:w-3/4" : "lg:w-2/3"
               }`}
             >
-              <h6 className="mb-3 text-xl font-bold text-white">
+              <h6 className="mb-3 text-lg font-bold text-white">
                 {project.title}
               </h6>
               <p className="mb-4 leading-relaxed text-neutral-300">

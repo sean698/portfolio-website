@@ -10,8 +10,6 @@ export const ROLES = [
 
 export const HERO_CONTENT = `I am a passionate full stack developer with a knack for crafting robust and scalable web applications. With 5 years of hands-on experience, I have honed my skills in front-end technologies like React and Next.js, as well as back-end technologies like Node.js, MySQL, PostgreSQL, and MongoDB. My goal is to leverage my expertise to create innovative solutions that drive business growth and deliver exceptional user experiences.`;
 
-export const ABOUT_TEXT = `I am a committed and adaptable full-stack developer with a keen passion for crafting high-performance, user-centered web applications, seamlessly integrated with automated CI/CD workflows. With two years of hands-on experience, I have cultivated a versatile skill set across modern technologies, including React, JavaScript, TypeScript, Node.js, PostgreSQL, Docker, and Firebase. Beyond my work, I'm driven by a love for coding, an active lifestyle, and the occasional challenge of a good video game.`;
-
 export const EDUCATION = [
   {
     year: "2020.5 - 2024.1",

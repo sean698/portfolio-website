@@ -1,7 +1,12 @@
-import { ABOUT_TEXT } from "../constants";
 import { motion } from "framer-motion";
 
 const About = () => {
+  const beforeText =
+    "I am a passionate full-stack developer with a strong focus on building practical solutions that solve real-world problems. I independently developed and currently operate ";
+  const collectlyText = "Collectly (collectly.me)";
+  const afterText =
+    ", a growing housing platform that automatically aggregates rental listings across multiple websites in Greater Vancouver area. With two years of hands-on experience in modern web technologies, I enjoy creating efficient, user-centered applications that make a meaningful impact. Beyond coding, I'm driven by continuous learning and taking on new challenges in software development.";
+
   return (
     <div className="border-b border-neutral-900 pb-10">
       <motion.h1
@@ -23,7 +28,18 @@ const About = () => {
           className="w-full lg:w-3/4"
         >
           <div className="flex justify-center items-center">
-            <p className="my-2 text-center text-lg py-6">{ABOUT_TEXT}</p>
+            <p className="my-2 text-center text-lg py-6">
+              {beforeText}
+              <a
+                href="https://collectly.me"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-400 hover:text-purple-300 transition-colors duration-300 font-medium"
+              >
+                {collectlyText}
+              </a>
+              {afterText}
+            </p>
           </div>
         </motion.div>
       </div>

@@ -9,9 +9,11 @@ const Experience = () => {
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
         transition={{ duration: 1 }}
-        className="my-20 text-center text-4xl"
+        className="my-20 text-center text-4xl font-bold tracking-tight"
       >
-        Experience
+        <span className="bg-gradient-to-r from-purple-400 to-purple-300 bg-clip-text text-transparent">
+          Experience
+        </span>
       </motion.h1>
       <div>
         {EXPERIENCES.map((exp, index) => (
@@ -30,19 +32,25 @@ const Experience = () => {
               transition={{ duration: 1 }}
               className="w-full max-w-xl lg:w-3/4"
             >
-              <h6 className="mb-2 font-semibold">
-                {exp.role} -{" "}
-                <span className="text-sm text-purple-100">{exp.company}</span>
-              </h6>
-              <p className="mb-4 text-neutral-400">{exp.description}</p>
-              {exp.technologies.map((tech, index) => (
-                <span
-                  key={index}
-                  className="mr-2 mt-4 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-400"
-                >
-                  {tech}
+              <h6 className="mb-3 font-semibold">
+                <span className="text-lg text-white">{exp.role}</span>{" "}
+                <span className="text-base text-purple-100">
+                  @ {exp.company}
                 </span>
-              ))}
+              </h6>
+              <p className="mb-4 leading-relaxed text-neutral-300">
+                {exp.description}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {exp.technologies.map((tech, index) => (
+                  <span
+                    key={index}
+                    className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-purple-400 transition-colors hover:bg-neutral-800"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </motion.div>
           </div>
         ))}

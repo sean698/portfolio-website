@@ -1,7 +1,6 @@
-import project1 from "../assets/projects/project-1.jpg";
+import collectly from "../assets/projects/collectly.png";
 import project2 from "../assets/projects/project-2.jpg";
 import project3 from "../assets/projects/project-3.jpg";
-import project4 from "../assets/projects/project-4.jpg";
 
 export const ROLES = [
   "Full Stack Developer",
@@ -11,7 +10,7 @@ export const ROLES = [
 
 export const HERO_CONTENT = `I am a passionate full stack developer with a knack for crafting robust and scalable web applications. With 5 years of hands-on experience, I have honed my skills in front-end technologies like React and Next.js, as well as back-end technologies like Node.js, MySQL, PostgreSQL, and MongoDB. My goal is to leverage my expertise to create innovative solutions that drive business growth and deliver exceptional user experiences.`;
 
-export const ABOUT_TEXT = `I am a committed and adaptable full-stack developer with a keen passion for crafting high-performance, user-centered web applications, seamlessly integrated with automated CI/CD workflows. With two years of hands-on experience, I have cultivated a versatile skill set across modern technologies, including React, JavaScript, TypeScript, Node.js, PostgreSQL, Docker, and Firebase. Beyond my work, I’m driven by a love for coding, an active lifestyle, and the occasional challenge of a good video game.`;
+export const ABOUT_TEXT = `I am a committed and adaptable full-stack developer with a keen passion for crafting high-performance, user-centered web applications, seamlessly integrated with automated CI/CD workflows. With two years of hands-on experience, I have cultivated a versatile skill set across modern technologies, including React, JavaScript, TypeScript, Node.js, PostgreSQL, Docker, and Firebase. Beyond my work, I'm driven by a love for coding, an active lifestyle, and the occasional challenge of a good video game.`;
 
 export const EDUCATION = [
   {
@@ -29,46 +28,58 @@ export const EXPERIENCES = [
     year: "May 2024 - Present",
     role: "Software Engineer",
     company: "DraftKings Inc.",
-    description: `description description descriptiondescription description descriptiondescription description description description description descriptiondescription description descriptiondescription description description. `,
-    technologies: ["Javascript", "React.js", "Next.js", "mongoDB"],
+    description:
+      "Developed an integrated issue reporting system with Slack for streamlined problem reporting and resolution. Currently working on integrating React applications into a micro-frontend architecture, focusing on codebase refactoring and build process optimization.",
+    technologies: [
+      "React",
+      "JavaScript",
+      "TypeScript",
+      "Node.js",
+      "Kubernetes",
+      "PostgreSQL",
+    ],
   },
   {
     year: "Sep 2022 - May 2024",
     role: "Full-Stack Developer",
     company: "Sports IQ Analytics",
-    description: `description description descriptiondescription description descriptiondescription description description.`,
-    technologies: ["HTML", "CSS", "Vue.js", "mySQL"],
+    description:
+      "Participated in development of a real-time sports betting odds platform using React. Implemented Express proxy service on GCP with Okta authentication. Established CI/CD pipeline using CircleCI and deployed Grafana monitoring system for performance optimization.",
+    technologies: [
+      "React",
+      "JavaScript",
+      "Google Cloud",
+      "Okta",
+      "CircleCI",
+      "Grafana",
+    ],
   },
 ];
 
 export const PROJECTS = [
   {
-    title: "Project 1",
-    image: project1,
+    title: "Collectly - Housing Aggregator",
+    image: collectly,
+    link: "https://collectly.me",
     description:
-      "description description descriptiondescription description descriptiondescription description description.",
-    technologies: ["HTML", "CSS", "React", "Node.js", "MongoDB"],
+      "Created a centralized housing information platform for Greater Vancouver area. The website aggregates and processes rental listings from multiple sources, providing users with a comprehensive view of the local housing market. Growing user base demonstrates the platform's value in simplifying house hunting.",
+    technologies: ["React", "Node.js", "JavaScript", "Express", "GCP"],
   },
   {
-    title: "Project 2",
+    title: "Trading Console Platform",
     image: project2,
+    link: "#",
     description:
-      "description description descriptiondescription description descriptiondescription description description description description.",
-    technologies: ["HTML", "CSS", "Angular", "Firebase"],
+      "Developed a real-time internal trading platform that enables traders to manage and adjust odds efficiently. Features include live odds monitoring, quick adjustment tools, and comprehensive trading analytics. Built with real-time WebSocket communication and responsive design for optimal trading experience.",
+    technologies: ["React", "TypeScript", "WebSocket", "Firebase"],
   },
   {
-    title: "Project 3",
+    title: "Multi-source Web Scraper",
     image: project3,
+    link: "#",
     description:
-      "description description descriptiondescription description descriptiondescription.",
-    technologies: ["HTML", "CSS", "React", "Bootstrap"],
-  },
-  {
-    title: "Project 4",
-    image: project4,
-    description:
-      "description description descriptiondescription description descriptiondescription description description description description description description.",
-    technologies: ["HTML", "CSS", "Vue.js", "Express", "mySQL"],
+      "Engineered an automated web scraping system that extracts housing listings from multiple websites including Vanpeople, Craigslist, and Kijiji. Implemented robust data processing pipelines to clean, normalize, and store listing information. Powers the Collectly platform with reliable, real-time housing data.",
+    technologies: ["Python", "Scrapy", "PostgreSQL"],
   },
 ];
 

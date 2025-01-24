@@ -43,7 +43,6 @@ const App = () => {
           }}
         ></div>
       </div>
-      {/* <Navbar /> */}
       <div className="container mx-auto px-8 mt-20 flex">
         <div className="fixed top-0 left-0">
           <Sidebar />
@@ -54,7 +53,7 @@ const App = () => {
           <Hero />
           <About />
           <Skills />
-          {/* <Education /> */}
+          <Education />
           <Experience />
           <Projects />
           <Contact />

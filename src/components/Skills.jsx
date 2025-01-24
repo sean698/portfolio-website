@@ -30,9 +30,11 @@ const Skills = () => {
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
         transition={{ duration: 1 }}
-        className="my-20 text-center text-4xl"
+        className="my-20 text-center text-4xl font-bold tracking-tight"
       >
-        Skills
+        <span className="bg-gradient-to-r from-purple-400 to-purple-300 bg-clip-text text-transparent">
+          Skills
+        </span>
       </motion.h1>
       <motion.div
         whileInView={{ opacity: 1, x: 0 }}

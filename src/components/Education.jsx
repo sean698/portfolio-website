@@ -8,9 +8,11 @@ const Education = () => {
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
         transition={{ duration: 1 }}
-        className="my-20 text-center text-4xl"
+        className="my-20 text-center text-4xl font-bold tracking-tight"
       >
-        Education
+        <span className="bg-gradient-to-r from-purple-400 to-purple-300 bg-clip-text text-transparent">
+          Education
+        </span>
       </motion.h1>
       <div>
         {EDUCATION.map((edu, index) => (
@@ -29,8 +31,10 @@ const Education = () => {
               transition={{ duration: 1 }}
               className="w-full max-w-xl lg:w-3/4"
             >
-              <h6 className="mb-2 font-semibold">
-                <span className="text-sm text-purple-100">{edu.school}</span>
+              <h6 className="mb-2">
+                <span className="text-base font-medium text-purple-100">
+                  {edu.school}
+                </span>
               </h6>
             </motion.div>
           </div>

@@ -6,15 +6,6 @@ import Typewriter from "typewriter-effect";
 import { CheckIcon, ChevronRightIcon } from "lucide-react";
 import { AnimatedSubscribeButton } from "@/components/ui/animated-subscribe-button";
 
-// const xTransitionContainer = ({ hiddenX = -100, duration = 0.5, delay }) => ({
-//   hidden: { x: hiddenX, opacity: 0 },
-//   visible: {
-//     x: 0,
-//     opacity: 1,
-//     transition: { duration, delay },
-//   },
-// });
-
 const Hero = () => {
   const [startTyping, setStartTyping] = useState(false);
 
